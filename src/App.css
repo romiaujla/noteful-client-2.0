@@ -1,0 +1,8 @@
+.App{
+    max-width: 900px;
+    margin: auto;
+}
+
+.app-title{
+    text-transform: uppercase;
+}
