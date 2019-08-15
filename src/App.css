@@ -1,8 +1,11 @@
 .App{
     max-width: 900px;
     margin: auto;
+    padding: 0px 30px;
 }
-
 .app-title{
     text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.2em;
+    font-family: 'Enriqueta', serif;
 }

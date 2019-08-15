@@ -1,20 +1,22 @@
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 body{
     background: #093145;
     color: #fff;
 }
+
 main, div, section, ul, li, a, nav, p,
 h1, h2, h3, h4, h5, h6, button, form, 
 fieldset, legend, input, textarea, 
-select, option, label{
+select, option, label, header, link, 
+body, html{
     padding: 0px;
     margin: 0px;
 }
 
 .app-btn{
+    font-family: 'Enriqueta', serif;
     border: none;
     border-radius: 3px;
     background: #ebc944;
