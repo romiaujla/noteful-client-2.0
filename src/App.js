@@ -27,9 +27,10 @@ export default class App extends React.Component{
   }
 
   getNotes = (url) => {
-    const notes = [];
-    
-    return notes;
+    const notePromise = new Promise((resolve, reject) => {
+      
+    }).then();
+    console.log(notePromise);
   }
 
   getFolders = (url) => {
