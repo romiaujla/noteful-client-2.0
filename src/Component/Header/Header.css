@@ -7,3 +7,7 @@
 .Header .header-btns .add-folder-btn{
     margin-right: 25px;
 }
+
+.Header .app-title h1{
+    text-shadow: 5px 5px 0px rgba(0,0,0,1);
+}

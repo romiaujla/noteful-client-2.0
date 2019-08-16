@@ -32,3 +32,9 @@ body, html{
     background: #bca136;
     transition: .2s ease;
 }
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}

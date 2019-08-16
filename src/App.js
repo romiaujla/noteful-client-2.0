@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from './Component/Header/Header';
 import NotefulContext from './NotefulContext';
+import {BrowserRouter, Route} from 'react-router-dom';
+import SideBarNavigation from './Component/SideBarNavigation/SideBarNavigation';
 
 export default class App extends React.Component{
   
@@ -10,7 +12,8 @@ export default class App extends React.Component{
     this.state = {
       notes: [],
       folders: [],
-      apiEndpoint: 'http://localhost:9090'
+      apiEndpoint: 'http://localhost:9090',
+      errorPage: false
     }
   }
 
@@ -26,23 +29,82 @@ export default class App extends React.Component{
     console.log('Delete Note: ', noteId);
   }
 
-  getNotes = (url) => {
+  setNotes = (url) => {
     const notePromise = new Promise((resolve, reject) => {
-      
-    }).then();
-    console.log(notePromise);
+      fetch(url)
+        .then((response) => {
+            if(!response.ok){
+              reject('Could Not Fetch Notes From API');
+            }
+            return response.json();
+          })
+        .then((notesJson) => {
+          resolve(notesJson);
+        })
+    });
+
+    notePromise.then((notes) => {
+      this.setState({
+        notes
+      })
+    }).catch(err => {
+      console.log(err);
+    })
+
   }
 
-  getFolders = (url) => {
-    const folders = [];
+  setFolders = (url) => {
+    const foldersPromise = new Promise((resolve, reject) => {
+      fetch(url)
+        .then((response) => {
+          if(!response.ok){
+            reject('Error: Could Not Fetch Folders From API');
+          }
+          return response.json();          
+        })
+        .then((responseJson) => {
+          resolve(responseJson);
+        })
+    });
 
-    return folders;
+    foldersPromise.then((folders) => {
+      this.setState({
+        folders
+      })
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
   componentDidMount = () => {
     const endpoint = this.state.apiEndpoint;
-    const notes = this.getNotes(`${endpoint}/notes/`);
-    const folders = this.getFolders(`${endpoint}/folders/`);
+    this.setNotes(`${endpoint}/notes/`);
+    this.setFolders(`${endpoint}/folders/`);
+  }
+
+  renderSideNavRoutes = () => {
+    const paths = [
+      '/',
+    ];
+
+    const sideNavRoutes = paths.map((path, i) => {
+      return (
+        <Route
+          key={i}
+          path={path}
+          render={(rprops) => <SideBarNavigation rprops={rprops} />}
+        />
+      );
+    });
+
+    return sideNavRoutes;
+  }
+
+  renderNotesSectionRoutes = () => {
+    const paths = [
+      '/',
+      '/notes/:notesId'
+    ]
   }
 
   render(){
@@ -55,10 +117,16 @@ export default class App extends React.Component{
 
     return (
       <NotefulContext.Provider value={value}>
-        <main className='App'>
-          <Header 
-          />
-        </main>
+        <BrowserRouter>
+          <main className='App'>
+            <Header 
+            />
+            <div className='flex-div'>
+              
+                {this.renderSideNavRoutes()}
+            </div>
+          </main>
+        </BrowserRouter>
       </NotefulContext.Provider>
     );
   }

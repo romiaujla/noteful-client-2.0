@@ -9,3 +9,6 @@
     letter-spacing: 0.2em;
     font-family: 'Enriqueta', serif;
 }
+.flex-div{
+    display: flex;
+}

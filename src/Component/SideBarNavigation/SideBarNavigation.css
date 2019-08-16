@@ -1,0 +1,15 @@
+.SideBarNavigation{
+    font-family: 'Enriqueta', sans-serif;
+}
+
+.SideBarNavigation li{
+    list-style: none;
+}
+.SideBarNavigation a{
+    text-decoration: none;
+    color:inherit;
+}
+.SideBarNavigation .folder-link{
+    margin: 15px 0px;
+    text-align: center;
+}
