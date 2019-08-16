@@ -4,6 +4,7 @@ import Header from './Component/Header/Header';
 import NotefulContext from './NotefulContext';
 import {BrowserRouter, Route} from 'react-router-dom';
 import SideBarNavigation from './Component/SideBarNavigation/SideBarNavigation';
+import NotesSection from './Component/NotesSection/NotesSection';
 
 export default class App extends React.Component{
   
@@ -103,8 +104,21 @@ export default class App extends React.Component{
   renderNotesSectionRoutes = () => {
     const paths = [
       '/',
-      '/notes/:notesId'
-    ]
+      '/folders/:folderId'
+    ];
+    
+    const notesSectionRoutes = paths.map((path, i) => {
+      return (
+        <Route
+          key={i}
+          exact
+          path={path}
+          render={(rprops) => <NotesSection rprops={rprops} />}
+        />
+      );
+    });
+
+    return notesSectionRoutes;
   }
 
   render(){
@@ -122,8 +136,8 @@ export default class App extends React.Component{
             <Header 
             />
             <div className='flex-div'>
-              
                 {this.renderSideNavRoutes()}
+                {this.renderNotesSectionRoutes()}
             </div>
           </main>
         </BrowserRouter>

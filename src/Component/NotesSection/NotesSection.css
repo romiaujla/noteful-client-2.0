@@ -1,0 +1,37 @@
+.NotesSection{
+    flex: 2;
+    padding-left: 40px;
+}
+.NotesSection .notes-list{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.NotesSection .notes-list li{
+    list-style: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 49%;
+    min-width: 250px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.NotesSection .notes-list li:nth-of-type(odd){
+    margin-right: 10px;
+}
+.NotesSection h3{
+    border-bottom: 1px solid #bca136;
+    margin: 20px 0px 30px 0px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: .9em;
+}
+@media only screen and (max-width: 746px){
+    .NotesSection .notes-list li{
+        width: 100%;
+        /* min-width: 100%; */
+    }
+    .NotesSection .notes-list li:nth-of-type(odd){
+        margin-right: 0px;
+    }
+}

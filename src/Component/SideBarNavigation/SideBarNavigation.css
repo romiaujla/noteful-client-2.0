@@ -11,5 +11,14 @@
 }
 .SideBarNavigation .folder-link{
     margin: 15px 0px;
+}
+.SideBarNavigation .folder-list{
+    padding: 5px;
+}
+.SideBarNavigation h3{
+    font-size: .9em;
+    margin-top: 20px;
     text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bca136;
 }
