@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './NotesSection.css';
 import NotefulContext from '../../NotefulContext';
+import Moment from 'react-moment';
 
 export default class NotesSection extends Component {
     
@@ -19,9 +20,13 @@ export default class NotesSection extends Component {
             // Display ALL Notes on '/' path
             if(currentPath === '/'){
                 notesHeader = 'All Notes';
+                console.log(note.modified);
                 return (
                     <li key={note.id}>
+
                         <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                        <p>Date Last Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
+                        </p>
                     </li>
                 );
             }else{ 
