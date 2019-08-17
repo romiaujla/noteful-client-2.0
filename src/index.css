@@ -26,6 +26,7 @@ body, html{
     font-weight: 800;
     font-size: 0.9em;
     cursor: pointer;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.28);
 }
 .app-btn:hover,
 .app-btn:focus{
