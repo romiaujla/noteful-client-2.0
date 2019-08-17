@@ -5,12 +5,19 @@
 .NotesSection .notes-list{
     display: flex;
     flex-wrap: wrap;
-
+}
+.NotesSection li{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.NotesSection li h4{
+    color: #ebc944;
 }
 .NotesSection .notes-list li{
     list-style: none;
-    border: 1px solid white;
-    border-radius: 10px;
+    border: 1px solid #bca136;
+    border-radius: 4px;
     width: 49%;
     min-width: 250px;
     padding: 20px;
@@ -21,10 +28,19 @@
 }
 .NotesSection h3{
     border-bottom: 1px solid #bca136;
-    margin: 20px 0px 30px 0px;
+    margin-bottom: 30px;
     padding-bottom: 10px;
     text-align: center;
     font-size: .9em;
+}
+.NotesSection .note-last-modified{
+    padding-top: 8px;
+    font-size: 0.8em;
+}
+.NotesSection li div button{
+    font-family: sans-serif;
+    padding: 3px 5px;
+    font-size: 0.7em;
 }
 @media only screen and (max-width: 780px){
     .NotesSection .notes-list li{

@@ -23,10 +23,17 @@ export default class NotesSection extends Component {
                 console.log(note.modified);
                 return (
                     <li key={note.id}>
-
-                        <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
-                        <p>Date Last Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
-                        </p>
+                        <div>
+                            <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                            <p className='note-last-modified'>Date Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
+                            </p>
+                        </div>
+                        <div>
+                            <button 
+                                className='delete-btn app-btn'
+                                onClick={() => {}}
+                            >delete</button>
+                        </div>
                     </li>
                 );
             }else{ 
@@ -38,7 +45,17 @@ export default class NotesSection extends Component {
                     }
                     return (
                         <li key={note.id}>
-                            <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                            <div>
+                                <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                                <p className='note-last-modified'>Date Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
+                                </p>
+                            </div>
+                            <div>
+                                <button 
+                                    className='delete-btn app-btn'
+                                    onClick={() => {}}
+                                >delete</button>
+                            </div>
                         </li>
                     );
                 }
