@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './SideBarNavigation.css';
 import NotefulContext from '../../NotefulContext';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class SideBarNavigation extends Component {
     
@@ -10,12 +11,15 @@ export default class SideBarNavigation extends Component {
     render(){
 
         const currentPath = this.props.rprops.location.pathname;
+        const {folderId} = this.props.rprops.match.params;
         const {folders} = this.context;
         const {history} = this.props.rprops;
-
+        console.log(folderId);
         const folderHTML = folders.map((folder) => {
             return (
-                <li key={folder.id}>
+                <li 
+                    key={folder.id}
+                    className={(folderId === folder.id)? 'selected' : ''}>
                     <Link to={`/folders/${folder.id}`}>
                         <div className='folder-link app-btn'>
                             {folder.name}
@@ -25,6 +29,8 @@ export default class SideBarNavigation extends Component {
             );
         });
 
+
+        // Will return the folder
         return (
             <aside className='SideBarNavigation'>
                 {(currentPath === '/' || currentPath.includes('/folders/'))
@@ -51,4 +57,8 @@ export default class SideBarNavigation extends Component {
 
 SideBarNavigation.defaultProps = {
     rprops: {}
+}
+
+SideBarNavigation.propTypes = {
+    rprops: PropTypes.object.isRequired
 }

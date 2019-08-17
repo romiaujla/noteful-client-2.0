@@ -5,6 +5,10 @@
 .SideBarNavigation li{
     list-style: none;
 }
+.SideBarNavigation .selected .app-btn{
+    background: brown;
+    color: white; 
+} 
 .SideBarNavigation a{
     text-decoration: none;
     color:inherit;

@@ -14,15 +14,18 @@ export default class NotesSection extends Component {
         const {folders} = this.context;
         let notesHeader = 'All Notes';
         const currentPath = rprops.location.pathname;
+
         let notesHTML = notes.map((note) => {
+            // Display ALL Notes on '/' path
             if(currentPath === '/'){
                 notesHeader = 'All Notes';
                 return (
                     <li key={note.id}>
-                        <h4><Link to={`/note/${note.id}`}>{note.name}</Link></h4>
+                        <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
                     </li>
                 );
-            }else{
+            }else{ 
+                // Display notes when folder is selected
                 const {folderId} = rprops.match.params;
                 if(note.folderId === folderId){
                     if(folders.length !== 0){
@@ -30,7 +33,7 @@ export default class NotesSection extends Component {
                     }
                     return (
                         <li key={note.id}>
-                            <h4><Link to={`/note/${note.id}`}>{note.name}</Link></h4>
+                            <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
                         </li>
                     );
                 }

@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import Header from './Component/Header/Header';
 import NotefulContext from './NotefulContext';
-import {BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import SideBarNavigation from './Component/SideBarNavigation/SideBarNavigation';
 import NotesSection from './Component/NotesSection/NotesSection';
 
-export default class App extends React.Component{
-  
-  constructor(props){
+export default class App extends React.Component {
+
+  constructor(props) {
     super(props);
     this.state = {
       notes: [],
@@ -31,20 +31,18 @@ export default class App extends React.Component{
   }
 
   setNotes = (url) => {
-    const notePromise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       fetch(url)
         .then((response) => {
-            if(!response.ok){
-              reject('Could Not Fetch Notes From API');
-            }
-            return response.json();
-          })
+          if (!response.ok) {
+            reject('Could Not Fetch Notes From API');
+          }
+          return response.json();
+        })
         .then((notesJson) => {
           resolve(notesJson);
         })
-    });
-
-    notePromise.then((notes) => {
+    }).then((notes) => {
       this.setState({
         notes
       })
@@ -55,20 +53,18 @@ export default class App extends React.Component{
   }
 
   setFolders = (url) => {
-    const foldersPromise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       fetch(url)
         .then((response) => {
-          if(!response.ok){
+          if (!response.ok) {
             reject('Error: Could Not Fetch Folders From API');
           }
-          return response.json();          
+          return response.json();
         })
         .then((responseJson) => {
           resolve(responseJson);
         })
-    });
-
-    foldersPromise.then((folders) => {
+    }).then((folders) => {
       this.setState({
         folders
       })
@@ -86,11 +82,16 @@ export default class App extends React.Component{
   renderSideNavRoutes = () => {
     const paths = [
       '/',
+      '/folders/:folderId',
+      '/add-folder/',
+      '/add-note/',
+      '/notes/:noteId'
     ];
 
     const sideNavRoutes = paths.map((path, i) => {
       return (
         <Route
+          exact
           key={i}
           path={path}
           render={(rprops) => <SideBarNavigation rprops={rprops} />}
@@ -106,7 +107,7 @@ export default class App extends React.Component{
       '/',
       '/folders/:folderId'
     ];
-    
+
     const notesSectionRoutes = paths.map((path, i) => {
       return (
         <Route
@@ -121,23 +122,27 @@ export default class App extends React.Component{
     return notesSectionRoutes;
   }
 
-  render(){
+  render() {
 
     const value = {
       notes: this.state.notes,
       folders: this.state.folders,
-      deleteNote: this.handleDeleteNote
+      deleteNote: this.handleDeleteNote,
+      addFolder: this.handleAddFolder,
+      addNote: this.handleAddNote
     }
+
+    console.log(value);
 
     return (
       <NotefulContext.Provider value={value}>
         <BrowserRouter>
           <main className='App'>
-            <Header 
+            <Header
             />
             <div className='flex-div'>
-                {this.renderSideNavRoutes()}
-                {this.renderNotesSectionRoutes()}
+              {this.renderSideNavRoutes()}
+              {this.renderNotesSectionRoutes()}
             </div>
           </main>
         </BrowserRouter>
