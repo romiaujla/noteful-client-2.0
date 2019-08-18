@@ -20,7 +20,6 @@ export default class NotesSection extends Component {
             // Display ALL Notes on '/' path
             if(currentPath === '/'){
                 notesHeader = 'All Notes';
-                console.log(note.modified);
                 return (
                     <li key={note.id}>
                         <div>

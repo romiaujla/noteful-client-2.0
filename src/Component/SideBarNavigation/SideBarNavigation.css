@@ -1,5 +1,6 @@
 .SideBarNavigation{
     font-family: 'Enriqueta', sans-serif;
+    min-width: 150px;
 }
 
 .SideBarNavigation li{
@@ -24,4 +25,7 @@
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid #bca136;
+}
+.SideBarNavigation .go-back-nav{
+    margin-top: 20px;
 }

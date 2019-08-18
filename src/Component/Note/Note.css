@@ -1,0 +1,23 @@
+.Note{
+    flex: 2;
+    padding: 30px;
+    border: 1px solid #bca136;
+}
+.Note .note-title{
+    font-size: 1.6em;
+}
+.Note .note-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.Note .delete-btn{
+    font-size: 0.7em;
+    padding: 5px 8px;
+}
+
+.Note .note-content{
+    font-size: 0.9em;
+    line-height: 1.8em;
+}

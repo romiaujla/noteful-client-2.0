@@ -5,6 +5,7 @@ import NotefulContext from './NotefulContext';
 import { BrowserRouter, Route } from 'react-router-dom';
 import SideBarNavigation from './Component/SideBarNavigation/SideBarNavigation';
 import NotesSection from './Component/NotesSection/NotesSection';
+import Note from './Component/Note/Note';
 
 export default class App extends React.Component {
 
@@ -122,6 +123,25 @@ export default class App extends React.Component {
     return notesSectionRoutes;
   }
 
+  renderNoteRoute = () => {
+    const paths = [
+      '/notes/:noteId'
+    ];
+
+    const notesSectionRoutes = paths.map((path, i) => {
+      return (
+        <Route
+          key={i}
+          exact
+          path={path}
+          render={(rprops) => <Note rprops={rprops} />}
+        />
+      );
+    });
+
+    return notesSectionRoutes;
+  }
+
   render() {
 
     const value = {
@@ -132,8 +152,6 @@ export default class App extends React.Component {
       addNote: this.handleAddNote
     }
 
-    console.log(value);
-
     return (
       <NotefulContext.Provider value={value}>
         <BrowserRouter>
@@ -143,6 +161,7 @@ export default class App extends React.Component {
             <div className='flex-div'>
               {this.renderSideNavRoutes()}
               {this.renderNotesSectionRoutes()}
+              {this.renderNoteRoute()}
             </div>
           </main>
         </BrowserRouter>

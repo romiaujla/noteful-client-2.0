@@ -10,17 +10,13 @@ export default class Header extends Component {
                     <h1 role='link'><Link to='/'>Noteful</Link></h1>
                 </div>
                 <div className='header-btns'>
-                    <Link to='/add-folder/'>
-                        <button 
-                            className='app-btn add-folder-btn'>
+                    <Link to='/add-folder/'
+                        className='app-btn add-folder-btn'>
                             Add Folder +
-                        </button>
                     </Link>
-                    <Link to='/add-note/'>
-                        <button 
-                            className='app-btn add-note-btn'>
+                    <Link to='/add-note/'
+                        className='app-btn add-note-btn'>
                             Add Note +
-                        </button>
                     </Link>
                 </div>
             </header>
