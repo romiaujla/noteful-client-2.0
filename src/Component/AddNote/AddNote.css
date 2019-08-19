@@ -1,0 +1,11 @@
+.AddNote{
+    flex: 2;
+    max-width: 500px;
+    font-family: 'Cardo', sans-serif;
+    letter-spacing: 0.06em;
+    margin: 20px;
+    padding-bottom: 30px;
+}
+.AddNote .app-btn{
+    margin-top: 10px;
+}

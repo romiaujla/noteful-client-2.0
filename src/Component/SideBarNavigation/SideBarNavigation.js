@@ -9,12 +9,26 @@ export default class SideBarNavigation extends Component {
     
     static contextType = NotefulContext;
 
+    handleGoBack = () => {
+        const {history} = this.props.rprops;
+        const {notes} = this.context;
+        if(this.props.rprops.match.params.hasOwnProperty('noteId'))
+        {
+            let {noteId} = this.props.rprops.match.params;
+            if(noteId !== undefined){
+                const note = notes.find((note) => note.id === noteId);
+                history.push(`/folders/${note.folderId}`);
+            }
+        }else{
+            history.goBack();
+        }
+    }
+
     render(){
 
         const currentPath = this.props.rprops.location.pathname;
         const {folderId} = this.props.rprops.match.params;
         const {folders} = this.context;
-        const {history} = this.props.rprops;
         const folderHTML = folders.map((folder) => {
             return (
                 <li 
@@ -45,7 +59,7 @@ export default class SideBarNavigation extends Component {
                     : (<nav className='go-back-nav'>
                             <button 
                                 className='app-btn'
-                                onClick={() => {history.goBack()}}
+                                onClick={() => {this.handleGoBack()}}
                             >
                                 Go Back
                             </button>

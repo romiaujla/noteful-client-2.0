@@ -9,7 +9,6 @@
 .NotesSection li{
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 }
 .NotesSection li h4{
     color: #ebc944;
@@ -17,7 +16,6 @@
 .NotesSection .notes-list li{
     list-style: none;
     border: 1px solid #bca136;
-    /* border-radius: 4px; */
     width: 49%;
     min-width: 250px;
     padding: 20px;

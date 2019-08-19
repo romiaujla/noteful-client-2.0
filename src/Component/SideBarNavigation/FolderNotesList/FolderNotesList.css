@@ -1,0 +1,15 @@
+.FolderNotesListNav h1{
+    /* display: inline-block; */
+    font-size: 0.9em;
+    padding-bottom: 10px;
+    margin: 40px 20px 10px 0px;
+    border-bottom: 1px solid #ebc944;
+}
+.FolderNotesListNav ul li{
+    text-transform: capitalize;
+    margin: 5px 20px 5px 0px;
+}
+.FolderNotesListNav ul li.active{
+    background: brown;
+    color: white;
+}

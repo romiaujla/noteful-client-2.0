@@ -1,0 +1,10 @@
+.AddFolder{
+    flex: 2;
+    max-width: 500px;
+    /* border: 1px solid #ebc944; */
+    padding: 0px;
+    margin: 20px;
+}
+.AddFolder .add-btn-div{
+    background: inherit;
+}

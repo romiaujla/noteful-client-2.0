@@ -58,6 +58,7 @@ export default class NotesSection extends Component {
                         </li>
                     );
                 }
+                return '';
             }
         })
         

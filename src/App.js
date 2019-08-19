@@ -6,6 +6,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import SideBarNavigation from './Component/SideBarNavigation/SideBarNavigation';
 import NotesSection from './Component/NotesSection/NotesSection';
 import Note from './Component/Note/Note';
+import AddFolder from './Component/AddFolder/AddFolder';
+import AddNote from './Component/AddNote/AddNote';
 
 export default class App extends React.Component {
 
@@ -162,6 +164,18 @@ export default class App extends React.Component {
               {this.renderSideNavRoutes()}
               {this.renderNotesSectionRoutes()}
               {this.renderNoteRoute()}
+              
+              <Route
+                exact
+                path='/add-folder/'
+                render={(rprops) => <AddFolder rprops={rprops} />}
+              />
+
+              <Route
+                exact
+                path='/add-note/'
+                render={(rprops) => <AddNote rprops={rprops} />}
+              />
             </div>
           </main>
         </BrowserRouter>

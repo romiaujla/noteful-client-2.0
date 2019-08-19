@@ -11,8 +11,7 @@ export default class FolderNotesList extends Component {
 
         const {notes} = this.context;
         const {folders} = this.context;
-        const {noteId} = this.props.rprops.match.params;
-        const {history} = this.props.rprops;
+        const {noteId} = this.props.rprops.match.params;        
         let folderId = '';
         let currentFolder = {};
         if(notes.length !== 0 && folders.length !== 0){
@@ -22,15 +21,18 @@ export default class FolderNotesList extends Component {
         const notesList = notes.map((note) => {
             if(note.folderId === folderId){
                 return (
-                    <li 
-                        key={note.id}
-                        className={(note.id === noteId)? 'active' : ''}>
-                        <Link to={`/notes/${note.id}`}>{note.name}</Link>
-                    </li>
+                    <Link 
+                        to={`/notes/${note.id}`}
+                        key={note.id}><li 
+                        className={(note.id === noteId)? 'app-btn active' : 'app-btn'}>
+                        {note.name}
+                    </li></Link>
                 )
+            }else{
+                return '';
             }
         })
-        history.push(`/folders/${folderId}`);
+        // history.push(`/folders/${folderId}`);
 
         return (
             <nav className='FolderNotesListNav'>

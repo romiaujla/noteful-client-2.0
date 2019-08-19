@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Note.css';
-import {Link} from 'react-router-dom';
 import NotefulContext from '../../NotefulContext';
 import PropTypes from 'prop-types';
 
