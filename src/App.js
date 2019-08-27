@@ -16,7 +16,7 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
       folders: [],
-      apiEndpoint: 'http://localhost:9090',
+      fetchURL: 'http://localhost:9090',
       errorPage: false
     }
   }
@@ -33,6 +33,7 @@ export default class App extends React.Component {
     console.log('Delete Note: ', noteId);
   }
 
+  // Sets Notes from the API
   setNotes = (url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
@@ -55,6 +56,7 @@ export default class App extends React.Component {
 
   }
 
+  // Sets the folders from the API
   setFolders = (url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
@@ -76,12 +78,14 @@ export default class App extends React.Component {
     })
   }
 
+  // Set Notes and Folders once the Component Did Mount
   componentDidMount = () => {
-    const endpoint = this.state.apiEndpoint;
+    const endpoint = this.state.fetchURL;
     this.setNotes(`${endpoint}/notes/`);
     this.setFolders(`${endpoint}/folders/`);
   }
 
+  // Renders Routes for the Side Navigation
   renderSideNavRoutes = () => {
     const paths = [
       '/',
@@ -105,6 +109,7 @@ export default class App extends React.Component {
     return sideNavRoutes;
   }
 
+  // Renders Routes for the Main Section where Notes are displayed
   renderNotesSectionRoutes = () => {
     const paths = [
       '/',
@@ -125,6 +130,7 @@ export default class App extends React.Component {
     return notesSectionRoutes;
   }
 
+  // Render Rout for the detailed Note wth its Content
   renderNoteRoute = () => {
     const paths = [
       '/notes/:noteId'
@@ -144,11 +150,15 @@ export default class App extends React.Component {
     return notesSectionRoutes;
   }
 
+
+  // Main React Render Method()
   render() {
 
+    // Used to set the Context = State, to avoid a lot of prop drilling.
     const value = {
       notes: this.state.notes,
       folders: this.state.folders,
+      fetchURL: this.state.fetchURL,
       deleteNote: this.handleDeleteNote,
       addFolder: this.handleAddFolder,
       addNote: this.handleAddNote

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './AddFolder.css';
-import NotefulContext from '../../NotefulContext';
+// import NotefulContext from '../../NotefulContext';
 
 export default class AddFolder extends Component {
     

@@ -8,6 +8,13 @@ export default class NotesSection extends Component {
     
     static contextType = NotefulContext;
 
+    onDeleteNote = (noteId) => {
+        const {fetchURL} = this.context;
+        fetch(fetchURL, {
+            
+        })
+    }
+
     render(){
 
         const {rprops} = this.props;
@@ -30,7 +37,7 @@ export default class NotesSection extends Component {
                         <div>
                             <button 
                                 className='delete-btn app-btn'
-                                onClick={() => {}}
+                                onClick={() => {this.onDeleteNote(note.id)}}
                             >delete</button>
                         </div>
                     </li>
@@ -52,7 +59,7 @@ export default class NotesSection extends Component {
                             <div>
                                 <button 
                                     className='delete-btn app-btn'
-                                    onClick={() => {}}
+                                    onClick={() => {this.context.deleteNote(note.id)}}
                                 >delete</button>
                             </div>
                         </li>
