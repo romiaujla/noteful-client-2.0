@@ -7,6 +7,28 @@ export default class Note extends Component {
     
     static contextType = NotefulContext;
 
+    onDeleteNote = (noteId) => {
+        const {fetchURL} = this.context;
+        fetch(`${fetchURL}/notes/${noteId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json'
+            },
+        }).then(res => {
+            if(!res.ok){
+                return res.json().then((err) => {
+                    throw err
+                })
+            }
+            return res.json();
+        }).then(data => {
+            this.props.rprops.history.push('/');
+            this.context.deleteNote(noteId);
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     render(){
 
         const {notes} = this.context;
@@ -20,7 +42,12 @@ export default class Note extends Component {
                     <>
                         <div className='note-header'>
                             <h3 className='note-title'>{note.name}</h3>
-                            <button className='delete-btn app-btn'>Delete</button>
+                            <button 
+                                className='delete-btn app-btn'
+                                onClick={() => this.onDeleteNote(note.id)}
+                            >
+                                Delete
+                            </button>
                         </div>
                         <div className='note-content'>
                             <p>{note.content}</p>

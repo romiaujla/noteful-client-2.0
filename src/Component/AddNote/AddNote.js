@@ -9,7 +9,9 @@ export default class AddNote extends Component{
     render(){
 
         const {folders} = this.context;
-        const folderList = folders.map((folder) => <option value={folder.id}>{folder.name}</option>);
+        const folderList = folders.map((folder) => <option 
+                                                        value={folder.id}
+                                                        key={folder.id}>{folder.name}</option>);
 
         return(
             <div className='AddNote'>

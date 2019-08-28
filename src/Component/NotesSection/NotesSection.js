@@ -10,8 +10,23 @@ export default class NotesSection extends Component {
 
     onDeleteNote = (noteId) => {
         const {fetchURL} = this.context;
-        fetch(fetchURL, {
-            
+        fetch(`${fetchURL}/notes/${noteId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json'
+            },
+        }).then(res => {
+            if(!res.ok){
+                return res.json().then((err) => {
+                    throw err
+                })
+            }
+            return res.json();
+        }).then(data => {
+            console.log(data);
+            this.context.deleteNote(noteId);
+        }).catch(error => {
+            console.log(error);
         })
     }
 

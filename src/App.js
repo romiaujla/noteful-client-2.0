@@ -30,7 +30,10 @@ export default class App extends React.Component {
   }
 
   handleDeleteNote = (noteId) => {
-    console.log('Delete Note: ', noteId);
+    const notes = this.state.notes.filter(note => note.id !== noteId);
+    this.setState({
+      notes
+    })
   }
 
   // Sets Notes from the API
