@@ -8,3 +8,12 @@
 .AddFolder .add-btn-div{
     background: inherit;
 }
+.AddFolder .error{
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+}

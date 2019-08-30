@@ -17,12 +17,31 @@ export default class App extends React.Component {
       notes: [],
       folders: [],
       fetchURL: 'http://localhost:9090',
-      errorPage: false
+      folderPageError: false,
+      newFolderName: ''
     }
   }
 
   handleAddFolder = (folderName) => {
-    console.log('Add Folder Button Clicked');
+    // save forlderName with no spaces in the front and back
+    const newFolderName = folderName.trim();
+
+    // Validate if the folder name is valid
+    if(newFolderName === ''){
+      this.setState({
+        newFolderName,
+        folderPageError: true
+      });
+      // Return true so in the Add Folder textbox value can be reset to empty
+      return true;
+    }else{
+      // if the folderName is correct then set state and remove error
+      this.setState({
+        newFolderName,
+        folderPageError: false
+      });
+    }
+    
   }
 
   handleAddNote = (note) => {
@@ -181,7 +200,7 @@ export default class App extends React.Component {
               <Route
                 exact
                 path='/add-folder/'
-                render={(rprops) => <AddFolder rprops={rprops} />}
+                render={(rprops) => <AddFolder rprops={rprops} error={this.state.folderPageError}/>}
               />
 
               <Route
