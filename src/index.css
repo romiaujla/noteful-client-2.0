@@ -33,6 +33,11 @@ body, html{
     background: #bca136;
     transition: .2s ease;
 }
+.app-btn:disabled{
+    background: #333;
+    color: #555;
+    box-shadow: none;
+}
 
 a{
     text-decoration: none;

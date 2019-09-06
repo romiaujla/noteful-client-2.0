@@ -10,7 +10,13 @@ export default class AddFolder extends Component {
     constructor(props){
         super(props);
         this.folderNameInput = React.createRef();
-        this.submitButton = React.createRef();
+    }
+
+    // Every time load the Component in a default state
+    componentDidMount(){
+        this.context
+            .setFolderPageError(false, ``);
+        this.folderNameInput.current.value = ``;
     }
 
     // Validate the Folder Name as the value keeps changing
@@ -21,17 +27,33 @@ export default class AddFolder extends Component {
 
         if(folderName.length === 0){
             // Handle error for incorrect folder name
-            this.context.setFolderPageError(true, `Folder name is required and cannot just be empty spaces`);
-            this.submitButton.disabled = true;
+            this
+                .context
+                .setFolderPageError(true, `Folder name is required`);
         }else{
             // when a valid folder name is entered
-            this.context.setFolderPageError(false, ``);
+            this
+                .context
+                .setFolderPageError(false, ``);
         }
     }
 
     // Handle the Submit of the form, also checks for errors
     handleAddFolderSumbit = (e) => {
         e.preventDefault();
+        const folderName = this.folderNameInput.current.value;
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: folderName
+            })
+        }
+
         
         
         
@@ -60,7 +82,7 @@ export default class AddFolder extends Component {
                         <button 
                             type='submit' 
                             className='app-btn'
-                            ref={this.submitButton}>
+                            disabled={folderPageError.hasError}>
                             Add Folder
                         </button>
                     </div>
