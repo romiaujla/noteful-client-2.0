@@ -16,25 +16,35 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
       folders: [],
-      fetchURL: 'http://localhost:9090',
-      errorMessage: ''
+      fetchURL: `http://localhost:9090`,
+      folderPageError: {
+        hasError: false,
+        errorMessage: ``
+      }
     }
   }
 
   handleAddFolder = (folderName) => {
-    
-    
-    
+    // set folders state to the new folder list
   }
 
   handleAddNote = (note) => {
-    console.log('Add Note Button Clicked');
+    // set notes state to the new notes list
   }
 
   handleDeleteNote = (noteId) => {
     const notes = this.state.notes.filter(note => note.id !== noteId);
     this.setState({
       notes
+    })
+  }
+
+  setFolderPageError = (hasError, errorMessage) => {
+    this.setState({
+      folderPageError: {
+        hasError,
+        errorMessage
+      }
     })
   }
 
@@ -86,8 +96,14 @@ export default class App extends React.Component {
   // Set Notes and Folders once the Component Did Mount
   componentDidMount = () => {
     const endpoint = this.state.fetchURL;
-    this.setNotes(`${endpoint}/notes/`);
-    this.setFolders(`${endpoint}/folders/`);
+    Promise.all([
+      this.setNotes(`${endpoint}/notes/`),
+      this.setFolders(`${endpoint}/folders/`)
+    ]).then(([res1, res2]) => {
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
   }
 
   // Renders Routes for the Side Navigation
@@ -166,7 +182,9 @@ export default class App extends React.Component {
       fetchURL: this.state.fetchURL,
       deleteNote: this.handleDeleteNote,
       addFolder: this.handleAddFolder,
-      addNote: this.handleAddNote
+      addNote: this.handleAddNote,
+      setFolderPageError: this.setFolderPageError,
+      folderPageError: this.state.folderPageError
     }
 
     return (
@@ -183,7 +201,7 @@ export default class App extends React.Component {
               <Route
                 exact
                 path='/add-folder/'
-                render={(rprops) => <AddFolder rprops={rprops} error={this.state.folderPageError}/>}
+                render={(rprops) => <AddFolder rprops={rprops}/>}
               />
 
               <Route

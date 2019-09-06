@@ -6,5 +6,7 @@ export default React.createContext({
     fetchURL: '', 
     deleteNote: () => {},
     addNote: () => {},
-    addFolder: () => {}
+    addFolder: () => {},
+    setFolderPageError: () => {},
+    fodlerPageError: {},
 });
