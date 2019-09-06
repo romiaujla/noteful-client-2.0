@@ -56,7 +56,8 @@ export default class SideBarNavigation extends Component {
                             </ul>
                         </nav>
                     )
-                    : (<nav className='go-back-nav'>
+                    : (
+                        <nav className='go-back-nav'>
                             <button 
                                 className='app-btn'
                                 onClick={() => {this.handleGoBack()}}

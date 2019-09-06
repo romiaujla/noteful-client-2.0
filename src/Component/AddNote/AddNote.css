@@ -9,3 +9,25 @@
 .AddNote .app-btn{
     margin-top: 10px;
 }
+
+.AddNote .text-box-header{
+    display: block;
+}
+
+.AddNote .text-box-header + .input-div{
+    margin-bottom: 30px;
+}
+
+.required-label{
+    color:#ebc944;
+}
+
+.AddNote .input-div{
+    margin-bottom: 5px;
+}
+.AddNote .error{
+    color: red;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: 800;
+}

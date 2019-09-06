@@ -23,7 +23,6 @@ export default class NotesSection extends Component {
             }
             return res.json();
         }).then(data => {
-            console.log(data);
             this.context.deleteNote(noteId);
         }).catch(error => {
             console.log(error);
@@ -64,7 +63,7 @@ export default class NotesSection extends Component {
                     if(folders.length !== 0){
                         notesHeader = folders.find((folder) => folder.id === folderId).name + ' Folder Notes';
                     }else{
-                        notesHeader = 'Empty Folder';
+                        notesHeader = 'No Notes';
                     }
                     return (
                         <li key={note.id}>

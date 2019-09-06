@@ -9,4 +9,6 @@ export default React.createContext({
     addFolder: () => {},
     setFolderPageError: () => {},
     fodlerPageError: {},
+    setNotePageError: () => {},
+    notePageError: {}
 });

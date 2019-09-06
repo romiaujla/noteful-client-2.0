@@ -20,16 +20,21 @@ export default class App extends React.Component {
       folderPageError: {
         hasError: false,
         errorMessage: ``
+      },
+      notePageError: {
+        hasError: false,
+        nameErrorMessage: ``,
+        fodlerSelectErrorMessage: ``,
       }
     }
   }
 
-  handleAddFolder = () => {
+  updateFolders = () => {
     this.setFolders(`${this.state.fetchURL}/folders/`);
   }
 
-  handleAddNote = (note) => {
-    this.setFolders(`${this.state.fetchURL}/notes/`);
+  updateNotes = () => {
+    this.setNotes(`${this.state.fetchURL}/notes/`);
   }
 
   handleDeleteNote = (noteId) => {
@@ -45,6 +50,12 @@ export default class App extends React.Component {
         hasError,
         errorMessage
       }
+    })
+  }
+
+  setNotePageError = (notePageError) => {
+    this.setState({
+      notePageError
     })
   }
 
@@ -82,7 +93,6 @@ export default class App extends React.Component {
           return response.json();
         })
         .then((responseJson) => {
-          console.log(`Setting Folders`);
           resolve(responseJson);
         })
     }).then((folders) => {
@@ -182,10 +192,12 @@ export default class App extends React.Component {
       folders: this.state.folders,
       fetchURL: this.state.fetchURL,
       deleteNote: this.handleDeleteNote,
-      addFolder: this.handleAddFolder,
-      addNote: this.handleAddNote,
+      addFolder: this.updateFolders,
+      addNote: this.updateNotes,
       setFolderPageError: this.setFolderPageError,
-      folderPageError: this.state.folderPageError
+      folderPageError: this.state.folderPageError,
+      setNotePageError: this.setNotePageError,
+      notePageError: this.state.notePageError
     }
 
     return (
