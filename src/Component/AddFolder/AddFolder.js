@@ -14,11 +14,11 @@ export default class AddFolder extends Component {
 
     // Every time load the Component in a default state
     componentDidMount(){
-        this.context
-            .setFolderPageError(false, ``);
+        this.context.setFolderPageError(false, ``);
         this.folderNameInput.current.value = ``;
     }
 
+    
     // Validate the Folder Name as the value keeps changing
     validateFolderName = () => {
 
@@ -27,14 +27,10 @@ export default class AddFolder extends Component {
 
         if(folderName.length === 0){
             // Handle error for incorrect folder name
-            this
-                .context
-                .setFolderPageError(true, `Folder name is required`);
+            this.context.setFolderPageError(true, `Folder name is required`);
         }else{
             // when a valid folder name is entered
-            this
-                .context
-                .setFolderPageError(false, ``);
+            this.context.setFolderPageError(false, ``);
         }
     }
 
