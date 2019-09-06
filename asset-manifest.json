@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/noteful-client-2.0/static/css/main.1e31c3ac.chunk.css",
+    "main.js": "/noteful-client-2.0/static/js/main.b1e054d9.chunk.js",
+    "main.js.map": "/noteful-client-2.0/static/js/main.b1e054d9.chunk.js.map",
+    "runtime~main.js": "/noteful-client-2.0/static/js/runtime~main.c70d1d23.js",
+    "runtime~main.js.map": "/noteful-client-2.0/static/js/runtime~main.c70d1d23.js.map",
+    "static/js/2.57ce95ae.chunk.js": "/noteful-client-2.0/static/js/2.57ce95ae.chunk.js",
+    "static/js/2.57ce95ae.chunk.js.map": "/noteful-client-2.0/static/js/2.57ce95ae.chunk.js.map",
+    "index.html": "/noteful-client-2.0/index.html",
+    "precache-manifest.86726c2fe153718f3bac21d06b540c80.js": "/noteful-client-2.0/precache-manifest.86726c2fe153718f3bac21d06b540c80.js",
+    "service-worker.js": "/noteful-client-2.0/service-worker.js",
+    "static/css/main.1e31c3ac.chunk.css.map": "/noteful-client-2.0/static/css/main.1e31c3ac.chunk.css.map"
+  }
+}
