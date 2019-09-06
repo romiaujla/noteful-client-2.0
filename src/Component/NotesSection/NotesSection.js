@@ -35,7 +35,7 @@ export default class NotesSection extends Component {
         const {rprops} = this.props;
         const {notes} = this.context;
         const {folders} = this.context;
-        let notesHeader = 'All Notes';
+        let notesHeader = 'Empty Folder';
         const currentPath = rprops.location.pathname;
 
         let notesHTML = notes.map((note) => {
@@ -63,6 +63,8 @@ export default class NotesSection extends Component {
                 if(note.folderId === folderId){
                     if(folders.length !== 0){
                         notesHeader = folders.find((folder) => folder.id === folderId).name + ' Folder Notes';
+                    }else{
+                        notesHeader = 'Empty Folder';
                     }
                     return (
                         <li key={note.id}>
