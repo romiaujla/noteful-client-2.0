@@ -24,12 +24,12 @@ export default class App extends React.Component {
     }
   }
 
-  handleAddFolder = (folderName) => {
-    // set folders state to the new folder list
+  handleAddFolder = () => {
+    this.setFolders(`${this.state.fetchURL}/folders/`);
   }
 
   handleAddNote = (note) => {
-    // set notes state to the new notes list
+    this.setFolders(`${this.state.fetchURL}/notes/`);
   }
 
   handleDeleteNote = (noteId) => {
@@ -82,6 +82,7 @@ export default class App extends React.Component {
           return response.json();
         })
         .then((responseJson) => {
+          console.log(`Setting Folders`);
           resolve(responseJson);
         })
     }).then((folders) => {

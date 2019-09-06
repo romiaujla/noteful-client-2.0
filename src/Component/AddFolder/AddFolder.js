@@ -54,7 +54,22 @@ export default class AddFolder extends Component {
             })
         }
 
-        
+        fetch(`${this.context.fetchURL}/folders`, options)
+            .then((res) => {
+                if(!res.ok){
+                    throw new Error(`Folder could not be added`);
+                }
+                return res;
+            })
+            .then((data) => {
+                this.folderNameInput.current.value = '';
+                this.context.addFolder();
+                this.context.setFolderPageError(false, ``);
+                this.props.rprops.history.push('/');
+            })
+            .catch((err) => {
+                console.log(err.message);
+            })
         
         
     }
