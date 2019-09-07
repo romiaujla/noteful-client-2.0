@@ -86,7 +86,11 @@ export default class AddFolder extends Component {
                             className='foldername-textbox'
                             ref={this.folderNameInput}
                             onChange={() => {this.validateFolderName()}}
-                            required/>
+                            required
+                            aria-label='folder name'
+                            aria-required='true'
+                            aria-invalid={folderPageError.hasError}
+                            />
                     </div>
                     <ValidationError message={folderPageError.errorMessage} />
                     <div className='add-btn-div'>

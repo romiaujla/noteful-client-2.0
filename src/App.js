@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
       folders: [],
+      API_KEY: process.env.REACT_APP_API_KEY,
       fetchURL: `http://localhost:9090`,
       folderPageError: {
         hasError: false,
