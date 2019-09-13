@@ -8,6 +8,7 @@ import NotesSection from './Component/NotesSection/NotesSection';
 import Note from './Component/Note/Note';
 import AddFolder from './Component/AddFolder/AddFolder';
 import AddNote from './Component/AddNote/AddNote';
+import NotefulError from './NotefulError';
 
 export default class App extends React.Component {
 
@@ -26,7 +27,7 @@ export default class App extends React.Component {
         hasError: false,
         nameErrorMessage: ``,
         fodlerSelectErrorMessage: ``,
-      }
+      },
     }
   }
 
@@ -204,27 +205,30 @@ export default class App extends React.Component {
     return (
       <NotefulContext.Provider value={value}>
         <BrowserRouter>
-          <main className='App'>
-            <Header
-            />
-            <div className='flex-div'>
-              {this.renderSideNavRoutes()}
-              {this.renderNotesSectionRoutes()}
-              {this.renderNoteRoute()}
-              
-              <Route
-                exact
-                path='/add-folder/'
-                render={(rprops) => <AddFolder rprops={rprops}/>}
+          <NotefulError>
+            <main className='App'>
+              <Header
               />
+              <div className='flex-div'>
+                {this.renderSideNavRoutes()}
+                {this.renderNotesSctionRoutes()}
+                {this.renderNoteRoute()}
+                
+                
+                <Route
+                  exact
+                  path='/add-folder/'
+                  render={(rprops) => <AddFolder rprops={rprops}/>}
+                />
 
-              <Route
-                exact
-                path='/add-note/'
-                render={(rprops) => <AddNote rprops={rprops} />}
-              />
-            </div>
-          </main>
+                <Route
+                  exact
+                  path='/add-note/'
+                  render={(rprops) => <AddNote rprops={rprops} />}
+                />
+              </div>
+            </main>
+          </NotefulError>
         </BrowserRouter>
       </NotefulContext.Provider>
     );

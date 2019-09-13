@@ -129,3 +129,11 @@ select:focus {
 select option {
 	font-weight:normal;
 }
+
+.main-error{
+    background: #093145;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 40px;
+}
