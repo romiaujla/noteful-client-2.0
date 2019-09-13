@@ -11,9 +11,6 @@ export default class NotefulError extends Component {
 
     static getDerivedStateFromError(error){
         console.log(error);
-        this.setState({
-            hasError: true
-        })
         return { hasError: true };
     }
 
