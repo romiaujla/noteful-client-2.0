@@ -211,7 +211,7 @@ export default class App extends React.Component {
               />
               <div className='flex-div'>
                 {this.renderSideNavRoutes()}
-                {this.renderNotesSctionRoutes()}
+                {this.renderNotesSectionRoutes()}
                 {this.renderNoteRoute()}
                 
                 
