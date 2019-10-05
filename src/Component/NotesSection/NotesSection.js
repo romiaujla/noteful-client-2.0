@@ -58,8 +58,8 @@ export default class NotesSection extends Component {
                 );
             }else{ 
                 // Display notes when folder is selected
-                const {folderId} = rprops.match.params;
-                if(note.folderId === folderId){
+                const folderId = parseInt(rprops.match.params.folderId, 10);
+                if(note.folder_id === folderId){
                     if(folders.length !== 0){
                         notesHeader = folders.find((folder) => folder.id === folderId).name + ' Folder Notes';
                     }else{
