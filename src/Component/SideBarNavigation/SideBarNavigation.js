@@ -14,10 +14,10 @@ export default class SideBarNavigation extends Component {
         const {notes} = this.context;
         if(this.props.rprops.match.params.hasOwnProperty('noteId'))
         {
-            let {noteId} = this.props.rprops.match.params;
+            const noteId = parseInt(this.props.rprops.match.params.noteId, 10);
             if(noteId !== undefined){
                 const note = notes.find((note) => note.id === noteId);
-                history.push(`/folders/${note.folderId}`);
+                history.push(`/folders/${note.folder_id}`);
             }
         }else{
             history.goBack();
@@ -27,7 +27,7 @@ export default class SideBarNavigation extends Component {
     render(){
 
         const currentPath = this.props.rprops.location.pathname;
-        const {folderId} = this.props.rprops.match.params;
+        const folderId = parseInt(this.props.rprops.match.params.folderId, 10);
         const {folders} = this.context;
         const folderHTML = folders.map((folder) => {
             return (
