@@ -10,7 +10,6 @@ export default class FolderNotesList extends Component {
     render(){
 
         const {notes} = this.context;
-        console.log(notes);
         const {folders} = this.context;
         const noteId = parseInt(this.props.rprops.match.params.noteId,10);
         let folderId = 0;
@@ -18,7 +17,6 @@ export default class FolderNotesList extends Component {
         if(notes.length !== 0 && folders.length !== 0){
             folderId = notes.find((note) => note.id === noteId).folder_id;
             currentFolder = folders.find((folder) => folder.id === folderId, 10);
-            console.log(currentFolder);
         }
         const notesList = notes.map((note) => {
             if(note.folder_id === folderId){

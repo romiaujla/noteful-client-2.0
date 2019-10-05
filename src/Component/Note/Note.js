@@ -20,7 +20,6 @@ export default class Note extends Component {
                     throw err
                 })
             }
-            return res.json();
         }).then(data => {
             this.props.rprops.history.push('/');
             this.context.deleteNote(noteId);
