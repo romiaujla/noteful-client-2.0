@@ -32,9 +32,8 @@ export default class Note extends Component {
     render(){
 
         const {notes} = this.context;
-        const {noteId} = this.props.rprops.match.params;
+        const noteId = parseInt(this.props.rprops.match.params.noteId, 10);
         const note = notes.find((note) => note.id === noteId);
-
 
         return (
             <section className='Note'>
