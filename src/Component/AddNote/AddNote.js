@@ -49,7 +49,7 @@ export default class AddNote extends Component {
         if(!this.context.notePageError.hasError){
             const noteName = this.nameInputBox.current.value.trim();
             const content = this.content.current.value;
-            const selectedFolder = this.selectedFolder.current.value;
+            const selectedFolder = parseInt(this.selectedFolder.current.value, 10);
             const options = {
                 method: 'POST',
                 headers: {
@@ -58,7 +58,7 @@ export default class AddNote extends Component {
                 },
                 body: JSON.stringify({
                     name: noteName,
-                    folderId: selectedFolder,
+                    folder_id: selectedFolder,
                     content: content
                 })
             }

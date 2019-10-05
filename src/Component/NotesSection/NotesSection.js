@@ -21,7 +21,7 @@ export default class NotesSection extends Component {
                     throw err
                 })
             }
-            return res.json();
+            // return res.json();
         }).then(data => {
             this.context.deleteNote(noteId);
         }).catch(error => {

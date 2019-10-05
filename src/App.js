@@ -18,7 +18,7 @@ export default class App extends React.Component {
       notes: [],
       folders: [],
       API_KEY: process.env.REACT_APP_API_KEY,
-      fetchURL: `http://localhost:9090`,
+      fetchURL: `http://localhost:8000`,
       folderPageError: {
         hasError: false,
         errorMessage: ``
