@@ -1,7 +1,6 @@
 {
     "version" : 2,
-    "alias" : "romiaujla-noteful",
-    "name" : "noteful",
+    "name" : "noteful-2.0",
     "routes" : [
         {
             "src" : "^/static/(.*)",
