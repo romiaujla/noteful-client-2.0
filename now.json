@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "romiaujla-noteful",
+    "name": "noteful-client-2.0",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }
+    ]
+  }
