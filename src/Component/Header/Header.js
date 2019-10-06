@@ -23,8 +23,3 @@ export default class Header extends Component {
         );
     }
 }
-
-Header.defaultProps = {
-    handleAddFolder: () => {},
-    handleAddNote: () => {}
-}
