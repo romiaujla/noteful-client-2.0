@@ -21,7 +21,7 @@ export default class Note extends Component {
                 })
             }
         }).then(data => {
-            this.props.rprops.history.push('/');
+            this.props.rprops.history.push('/noteful-client-2.0/');
             this.context.deleteNote(noteId);
         }).catch(error => {
             console.log(error);

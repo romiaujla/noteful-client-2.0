@@ -7,14 +7,14 @@ export default class Header extends Component {
         return (
             <header className='Header'>
                 <div className='app-title'>
-                    <h1 role='link'><Link to='/'>Noteful</Link></h1>
+                    <h1 role='link'><Link to='/noteful-client-2.0/'>Noteful</Link></h1>
                 </div>
                 <div className='header-btns'>
-                    <Link to='/add-folder/'
+                    <Link to='/noteful-client-2.0/add-folder/'
                         className='app-btn add-folder-btn'>
                             Add Folder +
                     </Link>
-                    <Link to='/add-note/'
+                    <Link to='/noteful-client-2.0/add-note/'
                         className='app-btn add-note-btn'>
                             Add Note +
                     </Link>

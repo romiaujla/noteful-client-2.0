@@ -61,7 +61,7 @@ export default class AddFolder extends Component {
                 this.folderNameInput.current.value = '';
                 this.context.addFolder();
                 this.context.setFolderPageError(false, ``);
-                this.props.rprops.history.push('/');
+                this.props.rprops.history.push('/noteful-client-2.0/');
             })
             .catch((err) => {
                 console.log(err.message);

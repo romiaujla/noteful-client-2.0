@@ -72,7 +72,7 @@ export default class AddNote extends Component {
                 })
                 .then((data) => {
                     this.context.addNote();
-                    this.props.rprops.history.push('/');
+                    this.props.rprops.history.push('/noteful-client-2.0/');
                 })
                 .catch((err) => {
                     console.log(err);

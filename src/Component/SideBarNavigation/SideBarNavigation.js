@@ -17,7 +17,7 @@ export default class SideBarNavigation extends Component {
             const noteId = parseInt(this.props.rprops.match.params.noteId, 10);
             if(noteId !== undefined){
                 const note = notes.find((note) => note.id === noteId);
-                history.push(`/folders/${note.folder_id}`);
+                history.push(`/noteful-client-2.0/folders/${note.folder_id}`);
             }
         }else{
             history.goBack();
@@ -34,7 +34,7 @@ export default class SideBarNavigation extends Component {
                 <li 
                     key={folder.id}
                     className={(folderId === folder.id)? 'selected' : ''}>
-                    <Link to={`/folders/${folder.id}`}>
+                    <Link to={`/noteful-client-2.0/folders/${folder.id}`}>
                         <div className='folder-link app-btn'>
                             {folder.name}
                         </div>
@@ -47,7 +47,7 @@ export default class SideBarNavigation extends Component {
         // Will return the folder
         return (
             <aside className='SideBarNavigation'>
-                {(currentPath === '/' || currentPath.includes('/folders/'))
+                {(currentPath === '/noteful-client-2.0/' || currentPath.includes('/folders/'))
                     ? (
                         <nav className='folder-nav'>
                             <h3>Folder List</h3>
@@ -66,7 +66,7 @@ export default class SideBarNavigation extends Component {
                             </button>
                             <Route 
                                 exact
-                                path='/notes/:noteId'
+                                path='/noteful-client-2.0/notes/:noteId'
                                 render={(rprops) => <FolderNotesList rprops={rprops} />}
                             />
                         </nav>

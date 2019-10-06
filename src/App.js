@@ -123,11 +123,11 @@ export default class App extends React.Component {
   // Renders Routes for the Side Navigation
   renderSideNavRoutes = () => {
     const paths = [
-      '/',
-      '/folders/:folderId',
-      '/add-folder/',
-      '/add-note/',
-      '/notes/:noteId'
+      '/noteful-client-2.0/',
+      '/noteful-client-2.0/folders/:folderId',
+      '/noteful-client-2.0/add-folder/',
+      '/noteful-client-2.0/add-note/',
+      '/noteful-client-2.0/notes/:noteId'
     ];
 
     const sideNavRoutes = paths.map((path, i) => {
@@ -147,8 +147,8 @@ export default class App extends React.Component {
   // Renders Routes for the Main Section where Notes are displayed
   renderNotesSectionRoutes = () => {
     const paths = [
-      '/',
-      '/folders/:folderId'
+      '/noteful-client-2.0/',
+      '/noteful-client-2.0/folders/:folderId'
     ];
 
     const notesSectionRoutes = paths.map((path, i) => {
@@ -168,7 +168,7 @@ export default class App extends React.Component {
   // Render Rout for the detailed Note wth its Content
   renderNoteRoute = () => {
     const paths = [
-      '/notes/:noteId'
+      '/noteful-client-2.0/notes/:noteId'
     ];
 
     const notesSectionRoutes = paths.map((path, i) => {
@@ -218,13 +218,13 @@ export default class App extends React.Component {
                 
                 <Route
                   exact
-                  path='/add-folder/'
+                  path='/noteful-client-2.0/add-folder/'
                   render={(rprops) => <AddFolder rprops={rprops}/>}
                 />
 
                 <Route
                   exact
-                  path='/add-note/'
+                  path='/noteful-client-2.0/add-note/'
                   render={(rprops) => <AddNote rprops={rprops} />}
                 />
               </div>

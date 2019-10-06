@@ -22,7 +22,7 @@ export default class FolderNotesList extends Component {
             if(note.folder_id === folderId){
                 return (
                     <Link 
-                        to={`/notes/${note.id}`}
+                        to={`/noteful-client-2.0/notes/${note.id}`}
                         key={note.id}><li 
                         className={(note.id === noteId)? 'app-btn active' : 'app-btn'}>
                         {note.name}
@@ -32,7 +32,6 @@ export default class FolderNotesList extends Component {
                 return '';
             }
         })
-        // history.push(`/folders/${folderId}`);
 
         return (
             <nav className='FolderNotesListNav'>

@@ -39,12 +39,12 @@ export default class NotesSection extends Component {
 
         let notesHTML = notes.map((note) => {
             // Display ALL Notes on '/' path
-            if(currentPath === '/'){
+            if(currentPath === '/noteful-client-2.0/'){
                 notesHeader = 'All Notes';
                 return (
                     <li key={note.id}>
                         <div>
-                            <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                            <h4><Link to={`/noteful-client-2.0/notes/${note.id}`}>{note.name}</Link></h4>
                             <p className='note-last-modified'>Date Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
                             </p>
                         </div>
@@ -68,7 +68,7 @@ export default class NotesSection extends Component {
                     return (
                         <li key={note.id}>
                             <div>
-                                <h4><Link to={`/notes/${note.id}`}>{note.name}</Link></h4>
+                                <h4><Link to={`/noteful-client-2.0/notes/${note.id}`}>{note.name}</Link></h4>
                                 <p className='note-last-modified'>Date Modified: <Moment date={note.modified} format="MM/DD/YYYY" />
                                 </p>
                             </div>
