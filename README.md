@@ -15,8 +15,7 @@ Client:
 #### Tech Used
 - Front End: React, React Router, Javascript, HTML5, CSS3
 - Back End: NodeJS, Express, Postgresql
-- Server deployed on Heroku
-- Client deployed using Github Pages
+- Deployment: Heroku for Server, Github Pages for client
 
 #### Screenshots
 ###### Homepage
