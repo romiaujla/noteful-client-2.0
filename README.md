@@ -12,5 +12,17 @@ A react app that manages creating notes and folders.
 
 #### Screenshots
 ###### Homepage
-![homepage](https://github.com/romiaujla/noteful-client-2.0/master/screens/homepage.png)
+![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/homepage.png)
+
+###### Folder Selection - To view all notes in a folder
+![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-folder.png)
+
+###### Note Selection - To view the contents of a particular note
+![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-note.png)
+
+###### Add Folder Form
+![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-folder.png)
+
+###### Add Note Form
+![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-note.png)
 
