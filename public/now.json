@@ -10,6 +10,10 @@
         {
             "src" : ".*",
             "dest" : "/index.html"
+        },
+        {
+            "src" : "/_next/(.*)",
+            "dest" : "/_next/$1"
         }
     ]
 }
