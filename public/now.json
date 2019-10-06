@@ -1,7 +1,7 @@
 {
     "version" : 2,
-    "name" : "noteful",
     "alias" : "romiaujla-noteful",
+    "name" : "noteful",
     "routes" : [
         {
             "src" : "^/static/(.*)",
@@ -9,11 +9,7 @@
         },
         {
             "src" : ".*",
-            "dest" : "/index.html"
-        },
-        {
-            "src" : "/_next/(.*)",
-            "dest" : "/_next/$1"
+            "dest" : "index.html"
         }
     ]
 }
