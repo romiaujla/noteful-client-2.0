@@ -12,3 +12,24 @@
 .Header .app-title h1{
     text-shadow: 5px 5px 0px rgba(0,0,0,1);
 }
+
+
+
+@media only screen and (max-width: 678px) {
+    .Header{
+        display: block;
+        text-align:center;
+    }
+    .Header .app-title{
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+    .Header .header-btns{
+        margin-right: 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .Header .header-btns a{
+        margin-top: 15px;
+    }
+}
