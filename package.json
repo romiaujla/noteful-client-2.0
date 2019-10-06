@@ -18,11 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebiuld": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "now ./build",
+    "postdeploy" : "now alias -A ./build/now.json"
   },
   "eslintConfig": {
     "extends": "react-app"

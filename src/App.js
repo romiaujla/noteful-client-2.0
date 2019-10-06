@@ -9,6 +9,7 @@ import Note from './Component/Note/Note';
 import AddFolder from './Component/AddFolder/AddFolder';
 import AddNote from './Component/AddNote/AddNote';
 import NotefulError from './NotefulError';
+import { API_KEY } from './config';
 
 export default class App extends React.Component {
 
@@ -17,8 +18,8 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
       folders: [],
-      API_KEY: process.env.REACT_APP_API_KEY,
-      fetchURL: `http://localhost:8000`,
+      API_KEY,
+      fetchURL: `https://obscure-chamber-98726.herokuapp.com`,
       folderPageError: {
         hasError: false,
         errorMessage: ``
