@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "alias": "romiaujla-noteful",
     "name": "noteful-client-2.0",
     "routes": [
         {
