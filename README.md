@@ -4,9 +4,13 @@ A react app that manages creating notes and folders.
 - You can create folders and then create notes to be saved in them.
 
 #### Live Link
-##### https://romiaujla.github.io/noteful-client-2.0/
+##### - https://romiaujla.github.io/noteful-client-2.0/
 
 #### Tech Used
 - Front End: React, React Router, Javascript, HTML5, CSS3
-- Back End: NodeJS, Postgresql
+- Back End: NodeJS, Express, Postgresql
+
+#### Screenshots
+###### Homepage
+![homepage](https://github.com/romiaujla/noteful-client-2.0/master/screens/homepage.png)
 
