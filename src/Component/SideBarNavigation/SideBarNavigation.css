@@ -29,9 +29,3 @@
 .SideBarNavigation .go-back-nav{
     margin-top: 20px;
 }
-
-@media only screen and (max-width: 678px){
-    .SideBarNavigation{
-        /* min-width: 80px; */
-    }
-}
