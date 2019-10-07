@@ -17,3 +17,19 @@
     display: block;
     position: relative;
 }
+
+@media only screen and (max-width: 600px){
+    .flex-div{
+        display: block;
+    }
+    .SideBarNavigation{
+        margin-left: 20px;
+    }
+    input[type='text']{
+        font-size: 0.8em;
+    }
+    .input-div{
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+}
