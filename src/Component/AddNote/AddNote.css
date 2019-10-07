@@ -4,6 +4,7 @@
     font-family: 'Cardo', sans-serif;
     letter-spacing: 0.06em;
     margin: 20px;
+    padding-left: 30px;
     padding-bottom: 30px;
 }
 .AddNote .app-btn{
@@ -30,4 +31,19 @@
     font-size: 0.8em;
     text-transform: uppercase;
     font-weight: 800;
+}
+
+@media only screen and (max-width: 600px){
+    .AddNote{
+        padding-left: 0px;
+    }
+    .AddNote input, .AddNote textarea, .AddNote select{
+        font-size: 0.8em;
+    }
+    .AddNote .input-div{
+        padding: 5px;
+    }
+    .AddNote textarea{
+        height: 150px;
+    }
 }
