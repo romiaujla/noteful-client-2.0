@@ -1,8 +1,8 @@
 .AddFolder{
     flex: 2;
     max-width: 500px;
-    /* border: 1px solid #ebc944; */
     padding: 0px;
+    padding-left: 30px;
     margin: 20px;
 }
 .AddFolder .add-btn-div{
@@ -19,6 +19,9 @@
 }
 
 @media only screen and (max-width: 600px){
+    .AddFolder{
+        padding-left: 0px;
+    }
     .flex-div{
         display: block;
     }
