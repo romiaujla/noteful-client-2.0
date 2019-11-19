@@ -27,14 +27,14 @@ Client:
 ![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/homepage.png)
 
 ###### Folder Selection - To view all notes in a folder
-![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-folder.png)
+![view-notes](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-folder.png)
 
 ###### Note Selection - To view the contents of a particular note
-![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-note.png)
+![view-contents](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/selected-note.png)
 
 ###### Add Folder Form
-![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-folder.png)
+![add-folder](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-folder.png)
 
 ###### Add Note Form
-![homepage](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-note.png)
+![add-note](https://github.com/romiaujla/noteful-client-2.0/blob/master/screens/add-note.png)
 
